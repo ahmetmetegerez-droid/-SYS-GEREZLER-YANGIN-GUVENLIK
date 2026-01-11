@@ -10,8 +10,9 @@ h1 {
   text-align: center;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px;
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #d32f2f;
+  font-weight: bold;
 }
