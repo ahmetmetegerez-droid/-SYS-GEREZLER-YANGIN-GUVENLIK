@@ -1,19 +1,20 @@
-/* ===== GENEL AYARLAR ===== */
+/* RESET */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
   background-color: #f4f4f4;
-  color: #222;
+  color: #333;
   line-height: 1.6;
 }
 
-/* ===== HEADER ===== */
-header {
-  background: #111;
+/* HEADER */
+.site-header {
+  background: linear-gradient(90deg, #0b0b0b, #1a1a1a);
   border-bottom: 4px solid #c40000;
 }
 
@@ -26,6 +27,7 @@ header {
   justify-content: space-between;
 }
 
+/* LOGO */
 .logo-area {
   display: flex;
   align-items: center;
@@ -33,97 +35,157 @@ header {
 }
 
 .logo-area img {
-  height: 55px;
+  width: 55px;
+  height: auto;
 }
 
-.logo-area span {
-  color: #e60000;
+.logo-text strong {
+  color: #c40000;
   font-size: 20px;
-  font-weight: 700;
   letter-spacing: 1px;
 }
 
-/* ===== NAV ===== */
-nav a {
+.logo-text span {
+  display: block;
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* NAV */
+.main-nav a {
   color: #fff;
-  margin-left: 20px;
   text-decoration: none;
-  font-weight: 600;
+  margin-left: 20px;
+  font-size: 15px;
+  position: relative;
+  padding-bottom: 5px;
+  transition: 0.3s;
 }
 
-nav a:hover {
-  color: #e60000;
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #c40000;
+  transition: 0.3s;
 }
 
-/* ===== GENEL ALAN ===== */
-.container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
 }
 
-/* ===== HERO ===== */
+.main-nav a:hover {
+  color: #c40000;
+}
+
+/* HERO */
 .hero {
-  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-              url("https://images.unsplash.com/photo-1581092334494-1b1e3a56c6b7") center/cover no-repeat;
-  color: #fff;
-  padding: 90px 20px;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1581091870627-3f4b1a1b56b3")
+      center/cover no-repeat;
+  padding: 120px 20px;
   text-align: center;
+  color: #fff;
 }
 
-.hero h1 {
-  font-size: 38px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
+.hero-content {
   max-width: 800px;
   margin: auto;
 }
 
-/* ===== KARTLAR ===== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  line-height: 1.3;
 }
 
-.card {
+.hero p {
+  font-size: 18px;
+  color: #e0e0e0;
+}
+
+/* SERVICES */
+.services {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #111;
+  position: relative;
+}
+
+.services h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #c40000;
+  display: block;
+  margin: 15px auto 0;
+}
+
+.service-box {
   background: #fff;
-  padding: 25px;
-  border-left: 5px solid #c40000;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card h3 {
-  margin-top: 0;
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-box h3 {
   color: #c40000;
+  margin-bottom: 15px;
+  font-size: 22px;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #111;
+.service-box p {
+  color: #555;
+  font-size: 15px;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #0b0b0b;
   color: #aaa;
   text-align: center;
-  padding: 20px;
-  margin-top: 60px;
+  padding: 25px 15px;
   font-size: 14px;
+  border-top: 3px solid #c40000;
 }
 
-/* ===== MOBİL ===== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
     gap: 15px;
   }
 
-  nav a {
+  .main-nav a {
     margin: 0 10px;
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 16px;
   }
 }
