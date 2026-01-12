@@ -1,125 +1,228 @@
+/* =========================
+   GENEL AYARLAR
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background: #f4f4f4;
-  color: #222;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* HEADER */
-.site-header {
-  background: #000;
-  border-bottom: 3px solid #c40000;
+/* =========================
+   HEADER & NAVBAR
+========================= */
+header {
+  background-color: black;
+  border-bottom: 4px solid red;
 }
 
 .header-container {
   max-width: 1200px;
   margin: auto;
-  padding: 14px 20px;
+  padding: 15px 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
 }
 
-.logo-area {
+.logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.logo-svg {
-  background: linear-gradient(135deg, #ff0000, #b30000);
-  color: #fff;
-  font-weight: 800;
-  padding: 12px 14px;
-  border-radius: 8px;
-  font-size: 18px;
+.logo-box {
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 10px 14px;
+  border-radius: 6px;
 }
 
-.logo-text strong {
-  color: #ff0000;
-  font-size: 18px;
-  letter-spacing: 1px;
+.logo-text {
+  color: white;
 }
 
 .logo-text span {
-  display: block;
-  font-size: 12px;
-  color: #ccc;
+  color: red;
 }
 
 /* NAV */
-.main-nav a {
-  color: #fff;
-  margin-left: 20px;
+nav a {
+  color: white;
   text-decoration: none;
+  margin-left: 20px;
+  padding-bottom: 5px;
+  position: relative;
   font-weight: 500;
-  padding-bottom: 4px;
 }
 
-.main-nav a.active,
-.main-nav a:hover {
-  border-bottom: 2px solid #ff0000;
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: red;
+  transition: 0.3s;
 }
 
-/* HERO */
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* =========================
+   HERO ALANI
+========================= */
 .hero {
-  background: linear-gradient(180deg, #555, #666);
-  color: #fff;
-  padding: 80px 20px;
+  background: url("https://images.unsplash.com/photo-1581093588401-22c8f0f7a39c") center/cover no-repeat;
+  height: 60vh;
+  position: relative;
+}
+
+.hero-overlay {
+  background-color: rgba(0,0,0,0.6);
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 20px;
 }
 
 .hero h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  line-height: 1.3;
+  font-size: 40px;
+  margin-bottom: 15px;
 }
 
 .hero p {
   max-width: 700px;
-  margin: auto;
-  font-size: 16px;
-  color: #eee;
+  font-size: 18px;
 }
 
-/* SERVICES */
-.services {
+/* =========================
+   GENEL BÖLÜM
+========================= */
+.section {
   max-width: 1200px;
   margin: 60px auto;
   padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  color: red;
+  font-size: 32px;
+}
+
+/* =========================
+   HİZMETLER
+========================= */
+.services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
-.service-card {
-  background: #fff;
+.service-box {
+  background: white;
   padding: 30px;
-  border-left: 5px solid #c40000;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 6px solid red;
+  transition: 0.3s;
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-.service-card h3 {
-  color: #c40000;
+.service-box h3 {
   margin-bottom: 10px;
+  color: red;
 }
 
-/* FOOTER */
-.site-footer {
-  background: #000;
-  color: #ccc;
+.service-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   HAKKIMIZDA
+========================= */
+.about {
+  background: white;
+  padding: 40px;
+  border-radius: 6px;
+}
+
+/* =========================
+   İLETİŞİM
+========================= */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: darkred;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: black;
+  color: white;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
+  margin-top: 60px;
   font-size: 14px;
+}
+
+/* =========================
+   MOBİL
+========================= */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+  }
 }
