@@ -1,119 +1,129 @@
+/* ===== GENEL AYARLAR ===== */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  line-height: 1.6;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
-  background-color: #111;
-  padding: 20px;
+  background: #111;
+  border-bottom: 4px solid #c40000;
 }
 
-.header-inner {
+.header-container {
   max-width: 1200px;
   margin: auto;
+  padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-header h1 {
-  color: #d32f2f;
-  margin: 0;
-  font-size: 26px;
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
+.logo-area img {
+  height: 55px;
+}
+
+.logo-area span {
+  color: #e60000;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ===== NAV ===== */
 nav a {
   color: #fff;
   margin-left: 20px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 nav a:hover {
-  color: #d32f2f;
+  color: #e60000;
 }
 
-/* HERO */
+/* ===== GENEL ALAN ===== */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ===== HERO ===== */
 .hero {
-  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-              url("https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc") center/cover;
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+              url("https://images.unsplash.com/photo-1581092334494-1b1e3a56c6b7") center/cover no-repeat;
   color: #fff;
-  padding: 80px 20px;
+  padding: 90px 20px;
   text-align: center;
 }
 
-.hero h2 {
-  font-size: 36px;
+.hero h1 {
+  font-size: 38px;
   margin-bottom: 15px;
 }
 
 .hero p {
   font-size: 18px;
+  max-width: 800px;
+  margin: auto;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1200px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-}
-
-/* SERVICES */
-.services {
+/* ===== KARTLAR ===== */
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 25px;
+  margin-top: 40px;
 }
 
-.service-box {
-  background: #fafafa;
-  padding: 20px;
-  border-left: 5px solid #d32f2f;
-}
-
-/* FOOTER */
-footer {
-  background-color: #111;
-  color: #fff;
-  text-align: center;
+.card {
+  background: #fff;
   padding: 25px;
+  border-left: 5px solid #c40000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #25d366;
-  color: #fff;
-  padding: 15px 18px;
-  border-radius: 50%;
-  font-size: 22px;
-  text-decoration: none;
+.card h3 {
+  margin-top: 0;
+  color: #c40000;
 }
 
-/* MOBILE */
+/* ===== FOOTER ===== */
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+/* ===== MOBİL ===== */
 @media (max-width: 768px) {
-  .header-inner {
+  .header-container {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 15px;
   }
 
   nav a {
-    margin: 10px 0 0 0;
-    display: block;
+    margin: 0 10px;
   }
 
-  .hero h2 {
+  .hero h1 {
     font-size: 28px;
   }
 }
